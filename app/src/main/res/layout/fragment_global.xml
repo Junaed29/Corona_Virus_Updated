@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_margin="10dp"
+    tools:context=".UI.Fragment.GlobalFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <TextView
+        android:id="@+id/headingId"
+        android:textAlignment="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/amiko_bold"
+        android:text="Global"
+        android:textColor="#D32F2F"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Headline3" />
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/swipeRefreshLayoutId"
+        android:layout_below="@id/headingId"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <ScrollView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_margin="5dp"
+                    android:id="@+id/infected"
+                    app:cardElevation="5dp"
+                    android:backgroundTint="#FFFFFF"
+                    app:cardCornerRadius="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <LinearLayout
+                        android:padding="8dp"
+                        android:layout_width="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_height="wrap_content">
+                        <TextView
+                            android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5"
+                            android:text="Total Infected : "
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"/>
+
+                        <TextView
+                            android:id="@+id/globalInfectedTextViewId"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/lato_regular"
+                            android:textSize="24sp" />
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_margin="5dp"
+                    android:layout_below="@id/infected"
+                    android:id="@+id/activeInfected"
+                    app:cardElevation="5dp"
+                    android:backgroundTint="#FFFFFF"
+                    app:cardCornerRadius="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <LinearLayout
+                        android:padding="8dp"
+                        android:layout_width="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_height="wrap_content">
+                        <TextView
+                            android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5"
+                            android:text="Active Infected : "
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"/>
+
+                        <TextView
+                            android:id="@+id/globalActiveInfectedTextViewId"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/lato_regular"
+                            android:textSize="24sp" />
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_margin="5dp"
+                    android:layout_below="@id/activeInfected"
+                    android:id="@+id/death"
+                    app:cardElevation="5dp"
+                    android:backgroundTint="#FFFFFF"
+                    app:cardCornerRadius="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <LinearLayout
+                        android:padding="8dp"
+                        android:layout_width="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_height="wrap_content">
+                        <TextView
+                            android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5"
+                            android:text="Total Deaths : "
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"/>
+
+                        <TextView
+                            android:id="@+id/globalDeathTextViewId"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/lato_regular"
+                            android:textSize="24sp"/>
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_margin="5dp"
+                    android:layout_below="@id/death"
+                    android:id="@+id/recovered"
+                    app:cardElevation="5dp"
+                    android:backgroundTint="#FFFFFF"
+                    app:cardCornerRadius="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <LinearLayout
+                        android:padding="8dp"
+                        android:layout_width="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_height="wrap_content">
+                        <TextView
+                            android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5"
+                            android:text="Total Recovered : "
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"/>
+
+                        <TextView
+                            android:id="@+id/globalRecoveredTextViewId"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/lato_regular"
+                            android:textSize="24sp" />
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_margin="5dp"
+                    android:layout_below="@id/recovered"
+                    android:id="@+id/todayInfected"
+                    app:cardElevation="5dp"
+                    android:backgroundTint="#FFFFFF"
+                    app:cardCornerRadius="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <LinearLayout
+                        android:padding="8dp"
+                        android:layout_width="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_height="wrap_content">
+                        <TextView
+                            android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5"
+                            android:text="Today Infected : "
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"/>
+
+                        <TextView
+                            android:id="@+id/globalTodayInfectedTextViewId"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/lato_regular"
+                            android:textSize="24sp"/>
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_margin="5dp"
+                    android:layout_below="@id/todayInfected"
+                    android:id="@+id/todayDeath"
+                    app:cardElevation="5dp"
+                    android:backgroundTint="#FFFFFF"
+                    app:cardCornerRadius="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <LinearLayout
+                        android:padding="8dp"
+                        android:layout_width="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_height="wrap_content">
+                        <TextView
+                            android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5"
+                            android:text="Today Deaths : "
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"/>
+
+                        <TextView
+                            android:id="@+id/globalTodayDeathTextViewId"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/lato_regular"
+                            android:textSize="24sp"/>
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_margin="5dp"
+                    android:layout_below="@id/todayDeath"
+                    android:id="@+id/infectedPerMil"
+                    app:cardElevation="5dp"
+                    android:backgroundTint="#FFFFFF"
+                    app:cardCornerRadius="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <LinearLayout
+                        android:padding="8dp"
+                        android:layout_width="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_height="wrap_content">
+                        <TextView
+                            android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5"
+                            android:text="Infected Per One Million : "
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"/>
+
+                        <TextView
+                            android:id="@+id/globalInfectedPerMiTextViewId"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/lato_regular"
+                            android:textSize="24sp" />
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_margin="5dp"
+                    android:layout_below="@id/infectedPerMil"
+                    android:id="@+id/deathsPerOneMil"
+                    app:cardElevation="5dp"
+                    android:backgroundTint="#FFFFFF"
+                    app:cardCornerRadius="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <LinearLayout
+                        android:padding="8dp"
+                        android:layout_width="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_height="wrap_content">
+                        <TextView
+                            android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5"
+                            android:text="Deaths Per One Million : "
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"/>
+
+                        <TextView
+                            android:id="@+id/globalDeathsPerOneMilTextViewId"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/lato_regular"
+                            android:textSize="24sp" />
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+            </RelativeLayout>
+        </ScrollView>
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+
+
+</RelativeLayout>

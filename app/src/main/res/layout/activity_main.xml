@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".UI.MainActivity">
+
+    <RelativeLayout
+        android:layout_marginEnd="5dp"
+        android:id="@+id/relativeLayoutId"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+
+            android:gravity="center"
+            android:id="@+id/linearLayoutId"
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:paddingTop="2dp"
+                android:textStyle="bold"
+                android:id="@+id/timeTextViewId"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto_light"
+                android:textAlignment="center"
+                android:textColor="#000"
+                android:textSize="18sp" />
+            <TextView
+                android:text="(Swipe to refresh)"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto_light"
+                android:textAlignment="center"
+                android:textSize="13sp" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:visibility="gone"
+            android:gravity="center"
+            android:id="@+id/linearLayoutIdMyself"
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/aladin"
+                android:text="Developer Details"
+                android:textAlignment="center"
+                android:textAppearance="@style/TextAppearance.AppCompat.Title" />
+        </LinearLayout>
+    </RelativeLayout>
+
+    <FrameLayout
+        android:layout_below="@id/relativeLayoutId"
+        android:id="@+id/fragment_ContainerId"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/bottom_navigationId" />
+
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigationId"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="?android:attr/windowBackground"
+        android:foreground="?attr/selectableItemBackground"
+        app:itemIconTint="@drawable/bottom_nav_icon_color_selector"
+        app:itemTextColor="@drawable/bottom_nav_icon_color_selector"
+        app:menu="@menu/botton_menu" />
+
+
+
+</RelativeLayout>

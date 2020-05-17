@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".UI.Fragment.CountryFragment">
+
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/CountrySwipeRefreshLayoutId"
+        android:layout_below="@id/cardViewOfSearchViewId"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerViewId"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:listitem="@layout/sample_country_item"
+            />
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+   <com.google.android.material.circularreveal.cardview.CircularRevealCardView
+       android:id="@+id/cardViewOfSearchViewId"
+       android:layout_marginLeft="5dp"
+       android:layout_marginRight="5dp"
+       android:layout_marginTop="2dp"
+       android:layout_alignParentTop="true"
+       android:layout_alignParentEnd="true"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content">
+
+       <LinearLayout
+           android:layout_gravity="right"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content">
+           <androidx.appcompat.widget.SearchView
+               android:id="@+id/searchViewId"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:background="#fff" />
+       </LinearLayout>
+   </com.google.android.material.circularreveal.cardview.CircularRevealCardView>
+
+
+
+</RelativeLayout>

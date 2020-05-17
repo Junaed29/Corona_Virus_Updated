@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:icon="@drawable/global"
+        android:id="@+id/globalMenuId"
+        android:title="GLOBAL" />
+
+    <item
+        android:icon="@drawable/country"
+        android:id="@+id/countryMenuId"
+        android:title="Country" />
+
+    <item
+        android:icon="@drawable/devloper_image"
+        android:id="@+id/developerMenuId"
+        android:title="Developer" />
+
+
+
+
+
+
+</menu>

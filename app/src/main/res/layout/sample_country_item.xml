@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_margin="4dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="5dp"
+    app:cardElevation="6dp"
+    android:layout_height="wrap_content">
+    <RelativeLayout
+        android:padding="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/countryNameTextViewId"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/aladin"
+            android:text="30. Bangladesh"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5"
+            android:textColor="#000"
+            android:textSize="27sp" />
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/countryNameTextViewId"
+            android:fontFamily="@font/actor"
+            android:textColor="#000"
+            android:text="Total Infected : "
+            android:textSize="18sp" />
+        <TextView
+            android:id="@+id/countryTotalInfectedId"
+            android:layout_toRightOf="@id/textView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/countryNameTextViewId"
+            android:text="12,34,56,789"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/textView1"
+            android:fontFamily="@font/actor"
+            android:textColor="#000"
+            android:text="Total Death : "
+            android:textSize="18sp" />
+        <TextView
+            android:layout_toRightOf="@id/textView2"
+            android:id="@+id/countryTotalDeathId"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/textView1"
+            android:text="34,56,789"
+            android:textSize="18sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/textView1"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/alice"
+            android:text="Click..."
+            android:textColor="#0097A7" />
+
+
+    </RelativeLayout>
+
+
+</com.google.android.material.card.MaterialCardView>
