@@ -52,6 +52,7 @@ public class CountryFragment extends Fragment {
     SwipeRefreshLayout refreshLayout;
 
     List<CoronaLDB_Details> coronaLDB_detail_local;
+    List<String> indexNumber;
 
     TextView timeTextView;
 
@@ -77,6 +78,7 @@ public class CountryFragment extends Fragment {
         refreshLayout = view.findViewById(R.id.CountrySwipeRefreshLayoutId);
         timeTextView = getActivity().findViewById(R.id.timeTextViewId);
 
+        indexNumber = new ArrayList<>();
 
         recyclerView.setLayoutManager(new LinearLayoutManager(view.getContext()));
         recyclerView.setHasFixedSize(true);
@@ -130,8 +132,12 @@ public class CountryFragment extends Fragment {
 
     private void setCoronaList(List<CoronaLDB_Details> coronaLDB_details){
         coronaLDB_details.remove(0);
+        for (int i = 1; i <= coronaLDB_details.size();i++){
+            indexNumber.add(String.valueOf(i));
+        }
+
         this.coronaLDB_detail_local = coronaLDB_details;
-        coronaRecyclerViewAdapter.setCoronaDetails(coronaLDB_details);
+        coronaRecyclerViewAdapter.setCoronaDetails(coronaLDB_details,indexNumber);
         if(progressDialog!=null && progressDialog.isShowing()){
             progressDialog.dismiss();
         }
@@ -200,15 +206,20 @@ public class CountryFragment extends Fragment {
         @Override
         public boolean onQueryTextChange(String newText) {
             List<CoronaLDB_Details> coronaLDB_details_update = new ArrayList<>();
+            List<String> indexNumber_update = new ArrayList<>();
 
+            int i = 0;
             for(CoronaLDB_Details name : coronaLDB_detail_local){
+                String countryName  = indexNumber.get(i)+" "+name.getCountry();
                 //Get every letter into same order and find the match
-                if (name.getCountry().toLowerCase().contains(newText.toLowerCase())){
+                if (countryName.toLowerCase().contains(newText.toLowerCase())){
                     // Added to the new List
                     coronaLDB_details_update.add(name);
+                    indexNumber_update.add(indexNumber.get(i));
                 }
+                i++;
             }
-            coronaRecyclerViewAdapter.setCoronaDetails(coronaLDB_details_update);
+            coronaRecyclerViewAdapter.setCoronaDetails(coronaLDB_details_update,indexNumber_update);
             return true;
         }
     };

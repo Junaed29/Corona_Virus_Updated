@@ -21,6 +21,7 @@ import java.util.List;
 
 public class CoronaRecyclerViewAdapter extends RecyclerView.Adapter<CoronaRecyclerViewAdapter.NoteHolder> {
     List<CoronaLDB_Details> coronaDetails = new ArrayList<>();
+    List<String> indexNumber = new ArrayList<>();
 
     /****Same instance which interface created below****/
     private OnItemClickListener listener;
@@ -37,7 +38,8 @@ public class CoronaRecyclerViewAdapter extends RecyclerView.Adapter<CoronaRecycl
     @Override
     public void onBindViewHolder(@NonNull NoteHolder holder, int position) {
         CoronaLDB_Details currentCoronaDetails = coronaDetails.get(position);
-        String title = (position+1)+". "+currentCoronaDetails.getCountry();
+        String index = indexNumber.get(position);
+        String title = index+". "+currentCoronaDetails.getCountry();
         int totalInfected = currentCoronaDetails.getCases();
         int totalDeath = currentCoronaDetails.getDeaths();
 
@@ -48,7 +50,8 @@ public class CoronaRecyclerViewAdapter extends RecyclerView.Adapter<CoronaRecycl
 
     }
 
-    public void setCoronaDetails(List<CoronaLDB_Details> coronaDetails) {
+    public void setCoronaDetails(List<CoronaLDB_Details> coronaDetails,List<String> indexNumber) {
+        this.indexNumber = indexNumber;
         this.coronaDetails = coronaDetails;
         notifyDataSetChanged();
     }
